@@ -8,13 +8,16 @@
          <Search placeholder="Cerca un titolo" @search="search" />
       </div>
     </header>
+
+    <Test />
     <div class="container">
        <h2>Film</h2>
+
         <div id="movies">
         <Card v-for="movie in movies" :key="movie.id" :item="movie"/>
     </div>
 
-    <h2>Serie</h2>
+    <h2>Serie tv</h2>
     <div id="series">
       
         <Card v-for="serie in series" :key="serie.id" :item="serie"/>
@@ -27,6 +30,9 @@
 <script>
 import Search from "./components/Search.vue";
 import Card from "./components/Card.vue";
+import Test from "./components/Test.vue";
+
+
 import axios from "axios"
 
 export default {
@@ -35,6 +41,7 @@ export default {
   components: {
     Search,
     Card,
+    Test,
 
   }, 
   data() {
@@ -45,6 +52,7 @@ export default {
         language: "it-IT",
         baseUri: "https://api.themoviedb.org/3",
         key: "9821bc2a93ba1a28cbc3936527a04e7f",
+        upHere : true,
       }
     }
   },
@@ -143,6 +151,8 @@ button{
 #movies, #series{
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .container{
