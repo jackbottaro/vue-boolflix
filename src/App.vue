@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="app">
     <header>
       <div class="col">
         <img id="logo" src="https://brand.netflix.com/static/assets/icons/netflix_logo.svg" alt="">
@@ -9,7 +9,6 @@
       </div>
     </header>
 
-    <Test />
     <div class="container">
        <h2>Film</h2>
 
@@ -30,7 +29,8 @@
 <script>
 import Search from "./components/Search.vue";
 import Card from "./components/Card.vue";
-import Test from "./components/Test.vue";
+
+
 
 
 import axios from "axios"
@@ -41,7 +41,6 @@ export default {
   components: {
     Search,
     Card,
-    Test,
 
   }, 
   data() {
@@ -90,26 +89,34 @@ export default {
 </script>
 
 <style lang="scss">
-
-  
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 body{
-  background-color: #333f48;
+    background-color: #EEF2F7;
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+font-family: 'Red Hat Display', sans-serif;
+  scroll-behavior: smooth;
 }
 
 
 header{
   height: 75px;
-  background-color: black;
+  background-color: whitesmoke;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 30px;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
 }
 #logo{
   width: 100px;
@@ -137,6 +144,7 @@ header{
 
 input{
   margin: 15px;
+  padding: 3px 15px;
 }
 
 button{
@@ -144,8 +152,9 @@ button{
   border: 0;
   color: white;
   font-weight: bold;
-  padding: 2px 11px;
+  padding: 3px 14px;
   border-radius: 5px;
+  text-transform: uppercase;
 }
 
 #movies, #series{
@@ -163,10 +172,32 @@ button{
 
 h2{
   text-transform: uppercase;
-  color: white;
+  color: #00000073;
   font-weight: bold;
-  font-size: 50px;
+  font-size: 158px;
   text-align: center;
-  padding: 30px;
+margin-top: 30px;
+}
+
+// SCROLLBAR 
+*::-webkit-scrollbar {
+  width: 2px;
+  
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 20px;  
+  
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: lightgray;    
+  border-radius: 20px;
+
 }
 </style>

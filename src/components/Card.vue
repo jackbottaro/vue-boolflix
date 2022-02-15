@@ -1,7 +1,7 @@
 <template>
 <div id="container">
 
-  <div class="poster">
+  <div class="poster box">
     <img :src="`${basePhotoUri}${photoSize}${this.item.poster_path}`">
     
 
@@ -23,10 +23,7 @@
       </ul>
     </div>
   </div>
-  <!-- <ul id="card">
-        <li id="poster"><img :src="`${basePhotoUri}${photoSize}${this.item.poster_path}`"></li>
-        
-      </ul> -->
+
 </div>
 </template>
 
@@ -51,20 +48,11 @@ export default {
     }
   }
 };
-// const image = getElementById("poster").style.backgroundImage=`${this.basePhotoUri}${this.photoSize}${this.item.poster_path}`;
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
-// #card:hover{
-//   // position: absolute;
-//   background-color: black;
-//   width: 300px;
-// height: 100%;
-
-// }
 
 
 
@@ -84,13 +72,14 @@ export default {
 
 
 .poster:hover {
+cursor: pointer;
 
   .info{
     display: block;
   }
 
   img{
-    opacity: 0.1;
+    opacity: 0.2;
   }
 }
 
@@ -101,7 +90,6 @@ left: 10px;
 overflow-y: auto;
   width: 285px;
   height: 420px;
-  color: white;
   display: none;
   text-align: center;
   
@@ -134,6 +122,18 @@ ul{
   line-height: 22px;
   text-align: left;
 
+}
+
+// SHADOW
+.box {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
 }
 </style>
 
