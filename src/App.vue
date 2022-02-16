@@ -178,7 +178,7 @@ h2{
   // color: #00000073;
   color: #838588;
   font-weight: bold;
-  font-size: 158px;
+  font-size: 120px;
   text-align: center;
 margin-top: 30px;
 }
